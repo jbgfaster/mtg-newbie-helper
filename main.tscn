@@ -1,0 +1,446 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdone2ygffo52"]
+
+[ext_resource type="Texture2D" uid="uid://b1yh8wnfrujmn" path="res://Nexus-6P.png" id="1_gud3q"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Nexus-6p" type="Sprite2D" parent="."]
+scale = Vector2(0.204342, 0.204342)
+texture = ExtResource("1_gud3q")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="LifeCounter" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchor_right = 0.278
+anchor_bottom = 1.0
+offset_right = -0.256042
+
+[node name="Player 1" type="Control" parent="LifeCounter"]
+layout_mode = 1
+anchor_top = 0.210346
+anchor_right = 1.0
+anchor_bottom = 0.407309
+offset_top = -0.304016
+offset_bottom = 8.064
+metadata/_edit_use_anchors_ = true
+
+[node name="Button_plus" type="Button" parent="LifeCounter/Player 1"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 72.0
+offset_right = 96.0
+offset_bottom = 136.0
+text = "+"
+
+[node name="Button_count" type="Button" parent="LifeCounter/Player 1"]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 72.0
+offset_right = 192.0
+offset_bottom = 135.0
+text = "20"
+
+[node name="Button_minus" type="Button" parent="LifeCounter/Player 1"]
+layout_mode = 0
+offset_left = 224.0
+offset_top = 72.0
+offset_right = 288.0
+offset_bottom = 135.0
+text = "-"
+
+[node name="Button_minus2" type="Button" parent="LifeCounter/Player 1"]
+layout_mode = 0
+offset_left = 128.0
+offset_right = 192.0
+offset_bottom = 63.0
+text = "-4"
+flat = true
+
+[node name="Player 2" type="Control" parent="LifeCounter"]
+layout_mode = 1
+anchor_top = 0.679
+anchor_right = 1.0
+anchor_bottom = 0.876445
+offset_top = 0.00799561
+offset_bottom = 8.064
+metadata/_edit_use_anchors_ = true
+
+[node name="Button_plus" type="Button" parent="LifeCounter/Player 2"]
+layout_mode = 0
+offset_left = 32.0
+offset_right = 96.0
+offset_bottom = 64.0
+text = "+"
+
+[node name="Button_count" type="Button" parent="LifeCounter/Player 2"]
+layout_mode = 0
+offset_left = 128.0
+offset_right = 192.0
+offset_bottom = 63.0
+text = "20"
+
+[node name="Button_minus" type="Button" parent="LifeCounter/Player 2"]
+layout_mode = 0
+offset_left = 224.0
+offset_right = 288.0
+offset_bottom = 63.0
+text = "-"
+
+[node name="Button_minus2" type="Button" parent="LifeCounter/Player 2"]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 72.0
+offset_right = 192.0
+offset_bottom = 135.0
+text = "-4"
+flat = true
+
+[node name="DropCubes" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchor_right = 0.278
+anchor_bottom = 1.0
+offset_right = -0.256042
+
+[node name="Button_coin" type="Button" parent="DropCubes"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2
+anchor_top = 0.79
+anchor_right = 0.4
+anchor_bottom = 0.887
+offset_top = 0.0799866
+offset_bottom = 0.223999
+text = "Coin"
+
+[node name="Button_d20" type="Button" parent="DropCubes"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.6
+anchor_top = 0.79
+anchor_right = 0.8
+anchor_bottom = 0.887
+offset_top = 0.0799866
+offset_bottom = 0.223999
+text = "d20"
+
+[node name="Panel_history" type="Panel" parent="DropCubes"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = 80.0
+offset_right = -24.0
+offset_bottom = -72.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="DropCubes/Panel_history"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 2
+text = "d20 - 17
+coin - heads
+coin - tails"
+horizontal_alignment = 1
+
+[node name="Help" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchor_right = 0.278
+anchor_bottom = 1.0
+offset_right = -0.256042
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Help"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.075
+anchor_top = 0.123457
+anchor_right = 0.925
+anchor_bottom = 0.901235
+text = "Особенности формата:
+
+    У колоды есть командир — легендарное существо, вокруг которого собирается колода по цветам, а так же механикам. В колоде может быть два командира, если у обоих есть способность Partner, а также командиром может быть Planeswalker, если у него есть способность, которая позволяет такое.
+    Используется правило цветовой идентификации — все карты в колоде должны быть в цветах командира.
+    Колоды собраны по правилу синглтона — одна копия каждой карты, кроме базовых земель.
+    Включая командиров в колоде ровно 100 карт.
+    Сайдборд не используется.
+    Дополнительное условие победы — игрок, которому в течение партии нанесли 21 или более боевое повреждение одним генералом, проигрывает.
+
+В формате чаще всего играют «кучу малу», то есть все против всех, без зон влияния. На мой взгляд, комфортно собираться по 3−5 человек за столом."
+metadata/_edit_use_anchors_ = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Help"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.075
+anchor_top = 0.135802
+anchor_right = 0.925
+anchor_bottom = 0.876543
+horizontal_scroll_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Help/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Button1" type="Button" parent="Help/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 5
+text = "Commander Rules"
+text_overrun_behavior = 3
+
+[node name="Button2" type="Button" parent="Help/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 5
+text = "Draft Rules"
+text_overrun_behavior = 3
+
+[node name="Button3" type="Button" parent="Help/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 5
+text = "Draft Rules"
+text_overrun_behavior = 3
+
+[node name="Button4" type="Button" parent="Help/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 5
+text = "Draft Rules fffffffffffffffffffffffffffffffffff"
+text_overrun_behavior = 3
+
+[node name="Button5" type="Button" parent="Help/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 5
+text = "Draft Rules"
+text_overrun_behavior = 3
+
+[node name="Button6" type="Button" parent="Help/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 5
+text = "Draft Rules"
+text_overrun_behavior = 3
+
+[node name="Button7" type="Button" parent="Help/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 5
+text = "Draft Rules"
+text_overrun_behavior = 3
+
+[node name="Button8" type="Button" parent="Help/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 5
+text = "Draft Rules"
+text_overrun_behavior = 3
+
+[node name="Button9" type="Button" parent="Help/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 5
+text = "Draft Rules"
+text_overrun_behavior = 3
+
+[node name="Button10" type="Button" parent="Help/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 5
+text = "Draft Rules"
+text_overrun_behavior = 3
+
+[node name="Button11" type="Button" parent="Help/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 5
+text = "Draft Rules"
+text_overrun_behavior = 3
+
+[node name="Button12" type="Button" parent="Help/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 5
+text = "Draft Rules"
+text_overrun_behavior = 3
+
+[node name="Button13" type="Button" parent="Help/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 5
+text = "Draft Rules"
+text_overrun_behavior = 3
+
+[node name="Button14" type="Button" parent="Help/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 5
+text = "Draft Rules"
+text_overrun_behavior = 3
+
+[node name="Button15" type="Button" parent="Help/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 5
+text = "Draft Rules"
+text_overrun_behavior = 3
+
+[node name="Button16" type="Button" parent="Help/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 5
+text = "Draft Rules"
+text_overrun_behavior = 3
+
+[node name="Button17" type="Button" parent="Help/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 5
+text = "Draft Rules"
+text_overrun_behavior = 3
+
+[node name="Button18" type="Button" parent="Help/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 5
+text = "Draft Rules"
+text_overrun_behavior = 3
+
+[node name="Button19" type="Button" parent="Help/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 5
+text = "Draft Rules"
+text_overrun_behavior = 3
+
+[node name="Button20" type="Button" parent="Help/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 5
+text = "Draft Rules"
+text_overrun_behavior = 3
+
+[node name="Menu" type="Control" parent="."]
+layout_mode = 1
+anchor_right = 0.278
+anchor_bottom = 1.0
+offset_right = -0.256042
+
+[node name="Panel_history2" type="Panel" parent="Menu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = 80.0
+offset_right = -24.0
+offset_bottom = -72.0
+
+[node name="Button_1" type="Button" parent="Menu/Panel_history2"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 48.0
+offset_right = 80.0
+offset_bottom = 111.0
+text = "Life
+Count"
+
+[node name="Button_2" type="Button" parent="Menu/Panel_history2"]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 48.0
+offset_right = 168.0
+offset_bottom = 111.0
+text = "Drop
+Dice"
+
+[node name="Button_3" type="Button" parent="Menu/Panel_history2"]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 48.0
+offset_right = 256.0
+offset_bottom = 111.0
+text = "FAQ"
+
+[node name="Button_4" type="Button" parent="Menu/Panel_history2"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 176.0
+offset_right = 80.0
+offset_bottom = 239.0
+text = "Set
+Coin"
+
+[node name="Button_5" type="Button" parent="Menu/Panel_history2"]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 176.0
+offset_right = 168.0
+offset_bottom = 239.0
+text = "Set
+d20"
+
+[node name="Button_6" type="Button" parent="Menu/Panel_history2"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 304.0
+offset_right = 80.0
+offset_bottom = 367.0
+text = "History
+Dice"
+
+[node name="Button_7" type="Button" parent="Menu/Panel_history2"]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 304.0
+offset_right = 168.0
+offset_bottom = 367.0
+text = "History
+Life"
+
+[node name="Button_8" type="Button" parent="Menu/Panel_history2"]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 176.0
+offset_right = 256.0
+offset_bottom = 239.0
+text = "Life
+Back"
+
+[node name="Button_9" type="Button" parent="Menu/Panel_history2"]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 304.0
+offset_right = 256.0
+offset_bottom = 367.0
+text = "Dice
+Back"
+
+[node name="Button_to_Menu" type="Button" parent="."]
+layout_mode = 0
+offset_left = 248.0
+offset_top = 72.0
+offset_right = 298.0
+offset_bottom = 120.0
+text = "="
