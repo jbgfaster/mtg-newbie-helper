@@ -1,1 +1,17 @@
-res://main.tscn
+res://player_1_life_counter.tscn
+res://main1.tscn
+res://new_theme1.tres
+res://new_theme2.tres
+res://main1_button1_push.tres
+res://main1_button1_hover.tres
+res://main1_button1.tres
+res://Scripts/LifeHistory.gd
+res://dice_atlas.tres
+res://dice anims.tres
+res://Scripts/DiceD20Roll2d.gd
+res://Scripts/BaseDice.gd
+res://Scripts/DropDice.gd
+res://main2.tscn
+res://Scripts/MenuController.gd
+res://Scripts/LifeCounter.gd
+res://Scripts/LifeDiceHistory.gd

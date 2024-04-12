@@ -1,0 +1,90 @@
+[gd_scene load_steps=3 format=3 uid="uid://cenf854gle3bo"]
+
+[ext_resource type="Script" path="res://Scripts/LifeCounter.gd" id="1_yesbf"]
+[ext_resource type="Theme" uid="uid://djqkv8rrdmvuk" path="res://Materials/new_theme2.tres" id="2_etca8"]
+
+[node name="Player 1 life counter" type="Control" node_paths=PackedStringArray("hp_sum_obj", "hp_obj")]
+layout_mode = 3
+anchor_top = 0.589311
+anchor_right = 1.0
+anchor_bottom = 0.944
+offset_top = -0.304016
+offset_bottom = 0.319641
+script = ExtResource("1_yesbf")
+hp_sum_obj = NodePath("Button_sum")
+hp_obj = NodePath("Button_count")
+metadata/_edit_use_anchors_ = true
+
+[node name="Button_plus" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 1.03367
+anchor_bottom = 0.999907
+offset_right = -0.119904
+offset_bottom = 0.0240479
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+theme = ExtResource("2_etca8")
+theme_override_font_sizes/font_size = 32
+text = "+"
+icon_alignment = 1
+expand_icon = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Button_minus" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0333333
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+theme = ExtResource("2_etca8")
+theme_override_font_sizes/font_size = 32
+text = "-"
+icon_alignment = 1
+expand_icon = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Button_count" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -35.9999
+offset_right = 36.0
+offset_bottom = 36.0001
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+mouse_filter = 2
+theme_override_font_sizes/font_size = 32
+text = "20"
+
+[node name="Button_sum" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -36.0
+offset_top = -79.9996
+offset_right = 36.0
+offset_bottom = -7.9996
+grow_horizontal = 2
+grow_vertical = 0
+focus_mode = 0
+theme_override_font_sizes/font_size = 32
+text = "-4"
+flat = true
+
+[connection signal="button_down" from="Button_plus" to="." method="add_hp" binds= [1]]
+[connection signal="button_down" from="Button_minus" to="." method="add_hp" binds= [-1]]
+[connection signal="button_down" from="Button_sum" to="." method="destroy_sum"]

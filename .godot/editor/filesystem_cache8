@@ -1,7 +1,39 @@
-ea4bc82a6ad023ab7ee23ee620429895
-::res://::1712591089
+fc8a56933c4b1c8d796fdb8f7a9f9475
+::res://::1712956961
 icon.svg::CompressedTexture2D::4167544462167124690::1712590399::1712590405::1::::<><>::
-Nexus-6P.png::CompressedTexture2D::4261360810374456793::1712591076::1712591091::1::::<><>::
+main1.tscn::PackedScene::2626686422730886535::1712956961::0::1::::<><>::uid://0i12ktqqunqp::::res://Images/ui1/paper background.png<>uid://cenf854gle3bo::::res://player_1_life_counter.tscn<>res://Scripts/LifeHistory.gd<>uid://crbrsn0jhssj0::::res://Images/ui1/back-arrow.png<>res://Scripts/DropDice.gd<>res://Scripts/MenuController.gd<>res://Scripts/HelpNote.gd<>uid://bw5ii2vgag0yv::::res://Images/ui1/menu.png<>res://Scripts/HelpButton.gd<>res://Scripts/DiceD20Roll2d.gd<>uid://b1yh8wnfrujmn::::res://Images/ui1/Nexus-6P.png<>uid://bfuf7h1f0enpg::::res://Materials/dice anims.tres
+main2.tscn::PackedScene::4453779033654566125::1712956961::0::1::::<><>::uid://0i12ktqqunqp::::res://Images/ui1/paper background.png<>uid://cenf854gle3bo::::res://player_1_life_counter.tscn<>res://Scripts/LifeDiceHistory.gd<>res://Scripts/DropDice.gd<>uid://bfuf7h1f0enpg::::res://Materials/dice anims.tres<>res://Scripts/DiceD20Roll2d.gd<>uid://b1yh8wnfrujmn::::res://Images/ui1/Nexus-6P.png
+player_1_life_counter.tscn::PackedScene::5080797789691136880::1712956943::0::1::::<><>::res://Scripts/LifeCounter.gd<>uid://djqkv8rrdmvuk::::res://Materials/new_theme2.tres
 README.md::TextFile::-1::1712590272::0::1::::<><>::
-main.tscn::PackedScene::2626686422730886535::1712590619::0::1::::<><>::
-::res://Scripts/::1712590570
+::res://Images/::1712956961
+::res://Images/ui1/::1712925088
+2112.w026.n002.1189B.p1.1189.jpg::CompressedTexture2D::5605045231578866566::1712921401::1712956965::1::::<><>::
+2112.w026.n002.1189B.p1.1189.png::CompressedTexture2D::6134489390775317570::1712921717::1712956966::1::::<><>::
+back-arrow.png::CompressedTexture2D::5969181141996794483::1712924409::1712956961::1::::<><>::
+gradients.png::CompressedTexture2D::7140513127964626570::1712917930::1712956961::1::::<><>::
+menu.png::CompressedTexture2D::3993008049489202393::1712924502::1712956961::1::::<><>::
+menus.png::CompressedTexture2D::3806849435125034372::1712924388::1712956961::1::::<><>::
+Nexus-6P.png::CompressedTexture2D::4261360810374456793::1712591076::1712956963::1::::<><>::
+paper background.png::CompressedTexture2D::1772863526564583235::1712917930::1712956961::1::::<><>::
+RPG_GUI_v1.png::CompressedTexture2D::941103078655646047::1712917930::1712956962::1::::<><>::
+toppng.com-dice-roll-sprite-dice-roll-sprite-sheet-920x991.png::CompressedTexture2D::4925436703403875463::1712925049::1712956962::1::::<><>::
+wood background.png::CompressedTexture2D::6442477420575737029::1712917930::1712956961::1::::<><>::
+::res://Materials/::1712956961
+dice anims.tres::SpriteFrames::2779013595422371592::1712956961::0::1::::<><>::uid://ccf6htwpuppfj::::res://Images/ui1/toppng.com-dice-roll-sprite-dice-roll-sprite-sheet-920x991.png
+dice_atlas.tres::AtlasTexture::8922340905246846026::1712956961::0::1::::<><>::uid://ccf6htwpuppfj::::res://Images/ui1/toppng.com-dice-roll-sprite-dice-roll-sprite-sheet-920x991.png
+export_presets.cfg::TextFile::-1::1712835695::0::1::::<><>::
+main1_button1.tres::AtlasTexture::2030614023075258941::1712923798::0::1::::<><>::
+main1_button1_hover.tres::AtlasTexture::2646238712357584684::1712956961::0::1::::<><>::uid://ctnue5qalr2ew::::res://Images/ui1/2112.w026.n002.1189B.p1.1189.png
+main1_button1_push.tres::AtlasTexture::6935087795418576789::1712956961::0::1::::<><>::uid://ctnue5qalr2ew::::res://Images/ui1/2112.w026.n002.1189B.p1.1189.png
+new_theme1.tres::Theme::7501150442025321177::1712919407::0::1::::<><>::
+new_theme2.tres::Theme::7824638119795356150::1712924182::0::1::::<><>::
+::res://Scripts/::1712956554
+BaseDice.gd::GDScript::-1::1712951052::0::1::::<>Control<>::
+DiceD20Roll2d.gd::GDScript::-1::1712956554::0::1::::<>Control<>::
+DropDice.gd::GDScript::-1::1712953717::0::1::::<>Control<>::
+HelpButton.gd::GDScript::-1::1712675818::0::1::::<>Button<>::
+HelpNote.gd::GDScript::-1::1712676968::0::1::::<>Control<>::
+LifeCounter.gd::GDScript::-1::1712954001::0::1::::<>Control<>::
+LifeDiceHistory.gd::GDScript::-1::1712955351::0::1::::<>Button<>::
+LifeHistory.gd::GDScript::-1::1712955855::0::1::::<>Button<>::
+MenuController.gd::GDScript::-1::1712953126::0::1::::<>Control<>::

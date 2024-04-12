@@ -1,0 +1,166 @@
+[gd_scene load_steps=7 format=3 uid="uid://b4ppdcashnmqf"]
+
+[ext_resource type="Texture2D" uid="uid://0i12ktqqunqp" path="res://Images/ui1/paper background.png" id="1_t7e7r"]
+[ext_resource type="PackedScene" uid="uid://cenf854gle3bo" path="res://player_1_life_counter.tscn" id="2_od14l"]
+[ext_resource type="Script" path="res://Scripts/LifeDiceHistory.gd" id="3_xotm7"]
+[ext_resource type="Script" path="res://Scripts/DropDice.gd" id="6_4qpnc"]
+[ext_resource type="SpriteFrames" uid="uid://bfuf7h1f0enpg" path="res://Materials/dice anims.tres" id="6_tjuwr"]
+[ext_resource type="Script" path="res://Scripts/DiceD20Roll2d.gd" id="7_4x607"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="background" type="TextureRect" parent="."]
+self_modulate = Color(0.596078, 0.729412, 0.54902, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_t7e7r")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="LifeCounter" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Player 1 life counter" parent="LifeCounter" instance=ExtResource("2_od14l")]
+layout_mode = 1
+anchor_top = 0.600422
+anchor_bottom = 0.955111
+
+[node name="Button_plus" parent="LifeCounter/Player 1 life counter" index="0"]
+anchor_bottom = 1.12491
+
+[node name="Button_minus" parent="LifeCounter/Player 1 life counter" index="1"]
+anchor_bottom = 1.125
+
+[node name="Player 2 life counter" parent="LifeCounter" instance=ExtResource("2_od14l")]
+layout_mode = 1
+anchor_top = 0.055203
+anchor_bottom = 0.4
+offset_top = 0.253841
+offset_right = -0.000976563
+offset_bottom = 0.254883
+
+[node name="Button_plus" parent="LifeCounter/Player 2 life counter" index="0"]
+anchor_left = -0.0333334
+anchor_top = -0.161125
+anchor_right = 0.500334
+anchor_bottom = 0.998876
+
+[node name="Button_minus" parent="LifeCounter/Player 2 life counter" index="1"]
+anchor_left = 0.500001
+anchor_top = -0.161125
+anchor_right = 1.03334
+anchor_bottom = 0.998973
+
+[node name="Button_count" parent="LifeCounter/Player 2 life counter" index="2"]
+offset_top = -34.9108
+offset_bottom = 34.9108
+rotation = 3.14159
+pivot_offset = Vector2(35, 35)
+
+[node name="Button_sum" parent="LifeCounter/Player 2 life counter" index="3"]
+anchors_preset = 5
+anchor_top = 0.0
+anchor_bottom = 0.0
+offset_top = 0.0
+offset_bottom = 72.0
+grow_vertical = 1
+rotation = 3.14159
+pivot_offset = Vector2(35, 35)
+
+[node name="Button_back" type="Button" parent="LifeCounter" node_paths=PackedStringArray("dice_cube", "player1", "player2")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.469444
+anchor_top = 0.211111
+anchor_right = 0.530556
+anchor_bottom = 0.244444
+offset_left = -153.0
+offset_top = 171.0
+offset_right = -103.0
+offset_bottom = 219.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "BACK"
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("3_xotm7")
+dice_cube = NodePath("../../DropCubes/Control")
+player1 = NodePath("../Player 1 life counter")
+player2 = NodePath("../Player 2 life counter")
+
+[node name="Button_to_Menu" type="Button" parent="LifeCounter"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.469444
+anchor_top = 0.211111
+anchor_right = 0.530556
+anchor_bottom = 0.244444
+offset_left = 103.0
+offset_top = 171.0
+offset_right = 153.0
+offset_bottom = 219.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "RESET"
+icon_alignment = 1
+expand_icon = true
+
+[node name="DropCubes" type="Control" parent="." node_paths=PackedStringArray("dice")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("6_4qpnc")
+dice = NodePath("Control")
+
+[node name="Control" type="Button" parent="DropCubes" node_paths=PackedStringArray("animated_sprite")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.300333
+anchor_top = 0.4
+anchor_right = 0.733
+anchor_bottom = 0.6
+offset_left = -12.12
+offset_right = 0.119995
+offset_bottom = -3.05176e-05
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+flat = true
+script = ExtResource("7_4x607")
+animated_sprite = NodePath("AnimatedSprite2D")
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="DropCubes/Control"]
+position = Vector2(84, 76)
+scale = Vector2(0.803797, 0.803797)
+sprite_frames = ExtResource("6_tjuwr")
+animation = &"r10"
+
+[connection signal="button_down" from="LifeCounter/Button_back" to="LifeCounter/Button_back" method="step_back"]
+[connection signal="button_down" from="LifeCounter/Button_to_Menu" to="LifeCounter/Player 1 life counter" method="reset_hp"]
+[connection signal="button_down" from="LifeCounter/Button_to_Menu" to="LifeCounter/Player 2 life counter" method="reset_hp"]
+[connection signal="button_down" from="LifeCounter/Button_to_Menu" to="LifeCounter/Button_back" method="clear_history"]
+[connection signal="button_down" from="LifeCounter/Button_to_Menu" to="DropCubes/Control" method="reset"]
+[connection signal="button_down" from="DropCubes/Control" to="DropCubes" method="press_button_drop_dice" binds= [20]]
+
+[editable path="LifeCounter/Player 1 life counter"]
+[editable path="LifeCounter/Player 2 life counter"]

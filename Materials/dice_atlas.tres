@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://d0ebweymu4s4a"]
+
+[ext_resource type="Texture2D" uid="uid://ccf6htwpuppfj" path="res://Images/ui1/toppng.com-dice-roll-sprite-dice-roll-sprite-sheet-920x991.png" id="1_s4k0c"]
+
+[resource]
+atlas = ExtResource("1_s4k0c")
+region = Rect2(323, 0, 142, 159)
